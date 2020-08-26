@@ -1,0 +1,1 @@
+To get started, make sure you have Python 3.6 or newer installed.

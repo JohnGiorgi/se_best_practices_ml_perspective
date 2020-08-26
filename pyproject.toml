@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "se-best-practices-ml-perspective"
+version = "0.1.0"
+description = "An opinionated, pedagogical guide on software engineering best practices for those of us in machine learning."
+authors = ["johngiorgi <johnmgiorgi@gmail.com>"]
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+mkdocs = { version = "^1.1.2", optional = true }
+mkdocs-material = { version = "^5.5.8", optional = true }
+
+[tool.poetry.extras]
+documentation = ["mkdocs", "mkdocs-material"]
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.0.1"
+black = "^20.8b0"
+flake8 = "^3.8.3"
+pytest-cov = "^2.10.1"
+coverage = "^5.2.1"
+codecov = "^2.1.9"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
