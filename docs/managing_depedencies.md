@@ -28,19 +28,19 @@ To install poetry, run one of the following commands, depending on your system.
 With Poetry installed, we can create our first project like so
 
 ```bash
-poetry new se-best-practices-ml-perspective
+poetry new se_best_practices_ml_perspective
 ```
 
 !!! note
-    The reminder of the guide will assume you have called it `se-best-practices-ml-perspective`, but you can name it whatever you want.
+    The reminder of the guide will assume you have called it `se_best_practices_ml_perspective`, but you can name it whatever you want.
 
-Notice that poetry has automatically created a project directory for us. This includes a `README`, a main package directory `se-best-practices-ml-perspective`, and a `tests` directory (we will return to this later).
+Notice that poetry has automatically created a project directory for us. This includes a `README`, a main package directory `se_best_practices_ml_perspective`, and a `tests` directory (we will return to this later).
 
 ```bash
-se-best-practices-ml-perspective
+se_best_practices_ml_perspective
 ├── pyproject.toml
 ├── README.rst
-├── se-best-practices-ml-perspective
+├── se_best_practices_ml_perspective
 │   └── __init__.py
 └── tests
     ├── __init__.py
@@ -51,7 +51,7 @@ Most importantly, `pyproject.toml` is the configuration file (automatically gene
 
 ``` toml hl_lines="5"
 [tool.poetry]
-name = "se-best-practices-ml-perspective"
+name = "se_best_practices_ml_perspective"
 version = "0.1.0"
 description = ""
 authors = ["johngiorgi <johnmgiorgi@gmail.com>"]
@@ -79,7 +79,7 @@ Poetry will _automatically_ create a virtual environment if one does not exist, 
 
 ``` toml hl_lines="9 10"
 [tool.poetry]
-name = "se-best-practices-ml-perspective"
+name = "se_best_practices_ml_perspective"
 version = "0.1.0"
 description = ""
 authors = ["johngiorgi <johnmgiorgi@gmail.com>"]

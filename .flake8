@@ -5,3 +5,5 @@ ignore =
     # these rules don't play well with black
     E203  # whitespace before :
     W503  # line break before binary operator
+
+exclude = se_best_practices_ml_perspective/main_with_stylistic_errors.py

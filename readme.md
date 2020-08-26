@@ -22,4 +22,4 @@ __What tools will this guide cover?__
 - [`pytest`](https://docs.pytest.org/en/latest/), for testing.
 - [GitHub Actions](https://github.com/features/actions), for continous integration / continous development (CI/CD).
 
-Follow along with the guide here: https://johngiorgi.github.io/se-best-practices-ml-perspective/.
+Follow along with the guide here: https://johngiorgi.github.io/se_best_practices_ml_perspective/.

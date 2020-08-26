@@ -12,7 +12,7 @@ Machine learners who are not currently following software engineering best pract
 
 __What is machine learning specific about this guide?__
 
-In truth, nothing important. We use `python` as the language of choice as it is popular in machine learning, and we write some machine learning specific tests. Otherwise, this guide could apply to (almost) any python project.
+In truth, nothing important. We use Python as the language of choice as it is popular in machine learning, and we write some machine learning specific tests. Otherwise, this guide could apply to (almost) any python project.
 
 __What tools will this guide cover?__
 
