@@ -15,7 +15,7 @@
     
     
       
-        <title>Managing depedencies - My Docs</title>
+        <title>Managing depedencies - Software Engineering Best Practices, a Machine Learners Perspective</title>
       
     
     
@@ -60,7 +60,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href=".." title="My Docs" class="md-header-nav__button md-logo" aria-label="My Docs">
+    <a href=".." title="Software Engineering Best Practices, a Machine Learners Perspective" class="md-header-nav__button md-logo" aria-label="Software Engineering Best Practices, a Machine Learners Perspective">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -73,7 +73,7 @@
       
         <div class="md-header-nav__ellipsis">
           <span class="md-header-nav__topic md-ellipsis">
-            My Docs
+            Software Engineering Best Practices, a Machine Learners Perspective
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
@@ -134,13 +134,13 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs">
+    <a href=".." title="Software Engineering Best Practices, a Machine Learners Perspective" class="md-nav__button md-logo" aria-label="Software Engineering Best Practices, a Machine Learners Perspective">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    My Docs
+    Software Engineering Best Practices, a Machine Learners Perspective
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -151,8 +151,8 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Software Engineering Best Practices, a Machine Learners Perspective" class="md-nav__link">
-      Software Engineering Best Practices, a Machine Learners Perspective
+    <a href=".." title="About this Resource" class="md-nav__link">
+      About this Resource
     </a>
   </li>
 
@@ -165,6 +165,18 @@
   <li class="md-nav__item">
     <a href="../getting_started/" title="Getting started" class="md-nav__link">
       Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../linting_and_formatting/" title="Linting and formatting" class="md-nav__link">
+      Linting and formatting
     </a>
   </li>
 
@@ -354,11 +366,11 @@
 </code></pre></div>
 
 <h2 id="adding-dependencies-with-poetry">Adding Dependencies with Poetry</h2>
-<p>Adding dependencies is easy. Simply call <code>poetry add &lt;package_name&gt;</code>. For example, we will need <code>scikit-learn</code> in this guide.</p>
-<div class="highlight"><pre><span></span><code>poetry add scikit-learn
+<p>Adding dependencies is easy. Simply call <code>poetry add &lt;package_name&gt;</code>. For example, we will need <code>pytorch-lightning</code> and <code>torchvision</code> in this guide.</p>
+<div class="highlight"><pre><span></span><code>poetry add pytorch-lightning torchvision
 </code></pre></div>
 
-<p>Poetry will <em>automatically</em> create a virtual environment if one does not exist, and add <code>scikit-learn</code> as a dependency to <code>pyproject.toml</code>.</p>
+<p>Poetry will <em>automatically</em> create a virtual environment if one does not exist, and add <code>pytorch-lightning</code> and <code>torchvision</code> as dependencies to <code>pyproject.toml</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="k">[tool.poetry]</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;se-best-practices-ml-perspective&quot;</span>
 <span class="n">version</span> <span class="o">=</span> <span class="s">&quot;0.1.0&quot;</span>
@@ -367,7 +379,8 @@
 
 <span class="k">[tool.poetry.dependencies]</span>
 <span class="n">python</span> <span class="o">=</span> <span class="s">&quot;^3.7&quot;</span>
-<span class="hll"><span class="n">scikit-learn</span> <span class="o">=</span> <span class="s">&quot;^0.23.2&quot;</span>
+<span class="hll"><span class="n">pytorch-lightning</span> <span class="o">=</span> <span class="s">&quot;^0.9.0&quot;</span>
+</span><span class="hll"><span class="n">torchvision</span> <span class="o">=</span> <span class="s">&quot;^0.7.0&quot;</span>
 </span>
 <span class="k">[tool.poetry.dev-dependencies]</span>
 <span class="n">pytest</span> <span class="o">=</span> <span class="s">&quot;^5.2&quot;</span>
@@ -375,6 +388,8 @@
 <span class="k">[build-system]</span>
 <span class="n">requires</span> <span class="o">=</span> <span class="k">[&quot;poetry&gt;=0.12&quot;]</span>
 </code></pre></div>
+
+<p>Thats it for now. In the next section, we will go over linting and formatting.</p>
                 
               
               
@@ -393,7 +408,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../getting_started/" title="Getting started" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../linting_and_formatting/" title="Linting and formatting" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -402,7 +417,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Getting started
+                Linting and formatting
               </div>
             </div>
           </a>

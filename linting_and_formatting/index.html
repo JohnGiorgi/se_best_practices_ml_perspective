@@ -15,7 +15,7 @@
     
     
       
-        <title>Getting started - Software Engineering Best Practices, a Machine Learners Perspective</title>
+        <title>Linting and formatting - Software Engineering Best Practices, a Machine Learners Perspective</title>
       
     
     
@@ -48,6 +48,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#linting" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -72,7 +77,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Getting started
+              Linting and formatting
             
           </span>
         </div>
@@ -156,6 +161,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../getting_started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -164,22 +181,41 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-    <a href="./" title="Getting started" class="md-nav__link md-nav__link--active">
-      Getting started
-    </a>
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Linting and formatting
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../linting_and_formatting/" title="Linting and formatting" class="md-nav__link">
+    <a href="./" title="Linting and formatting" class="md-nav__link md-nav__link--active">
       Linting and formatting
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linting" class="md-nav__link">
+    Linting
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -202,6 +238,36 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linting" class="md-nav__link">
+    Linting
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -211,9 +277,59 @@
                   
                 
                 
-                  <h1>Getting started</h1>
+                  <h1>Linting and formatting</h1>
                 
-                <p>To get started, make sure you have Python 3.6.1 or newer installed.</p>
+                <h2 id="linting">Linting</h2>
+<p>A linter is a tool that can automatically identify syntax and stylistic errors in your code. A very popular linter for python is <a href="https://flake8.pycqa.org/en/latest/"><code>flake8</code></a> and will be our tool of choice in this guide.</p>
+<p>First, make sure we are in our project directory (named <code>"se-best-practices-ml-perspective"</code>) by default. Then, lets add <code>flake8</code> as a development dependency.</p>
+<div class="highlight"><pre><span></span><code>poetry add --dev flake8
+</code></pre></div>
+
+<p><code>--dev</code> just means we want this to be a <em>development dependency</em>, that is, a dependency we need to develop our code, but <em>not</em> required by an end user who simply wants to run our code. Lets check our <code>pyproject.toml</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[tool.poetry]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;se-best-practices-ml-perspective&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s">&quot;0.1.0&quot;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+<span class="n">authors</span> <span class="o">=</span> <span class="k">[&quot;johngiorgi &lt;johnmgiorgi@gmail.com&gt;&quot;]</span>
+
+<span class="k">[tool.poetry.dependencies]</span>
+<span class="n">python</span> <span class="o">=</span> <span class="s">&quot;^3.7&quot;</span>
+<span class="n">pytorch-lightning</span> <span class="o">=</span> <span class="s">&quot;^0.9.0&quot;</span>
+<span class="n">torchvision</span> <span class="o">=</span> <span class="s">&quot;^0.7.0&quot;</span>
+
+<span class="k">[tool.poetry.dev-dependencies]</span>
+<span class="n">pytest</span> <span class="o">=</span> <span class="s">&quot;^5.2&quot;</span>
+<span class="hll"><span class="n">flake8</span> <span class="o">=</span> <span class="s">&quot;^3.8.3&quot;</span>
+</span>
+<span class="k">[build-system]</span>
+<span class="n">requires</span> <span class="o">=</span> <span class="k">[&quot;poetry&gt;=0.12&quot;]</span>
+<span class="n">build-backend</span> <span class="o">=</span> <span class="s">&quot;poetry.masonry.api&quot;</span>
+</code></pre></div>
+
+<p>As expected, <code>flake8</code> has been added as a development dependency.</p>
+<p>Now, lets setup a simple example with <code>pytorch-lightning</code>. We will borrow <a href="https://github.com/PyTorchLightning/pytorch-lightning#heres-a-minimal-example-without-a-test-loop">their minimal example</a>. Download it from this repository.</p>
+<div class="highlight"><pre><span></span><code>curl 
+</code></pre></div>
+
+<p>Then, lets lint the file, checking it for errors.</p>
+<div class="highlight"><pre><span></span><code>poetry run flake8 .
+</code></pre></div>
+
+<p><code>flake8</code> reports several sytlistic errors</p>
+<div class="highlight"><pre><span></span><code>./se_best_practices_ml_perspective/main.py:28:1: W293 blank line contains whitespace
+./se_best_practices_ml_perspective/main.py:40:1: E305 expected 2 blank lines after class or function definition, found 1
+./se_best_practices_ml_perspective/main.py:46:59: W292 no newline at end of file
+</code></pre></div>
+
+<p>Of course, we could fix each error manually, but in the next section, we will see how a code formatter can automatically fix them for us!</p>
+<p>Now, lets create a python file, <code>main.py</code> under our packages root folder (<code>"se-best-practices-ml-perspective/se-best-practices-ml-perspective"</code> by default)</p>
+<div class="highlight"><pre><span></span><code>touch se_best_practices_ml_perspective/main.py
+</code></pre></div>
+
+<p>Then, lets add a simple <code>sklearn</code> classifier to <code>main.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
                 
               
               
@@ -232,7 +348,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href=".." title="About this Resource" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../getting_started/" title="Getting started" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -241,19 +357,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                About this Resource
+                Getting started
               </div>
             </div>
           </a>
         
         
-          <a href="../linting_and_formatting/" title="Linting and formatting" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../managing_depedencies/" title="Managing depedencies" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Linting and formatting
+                Managing depedencies
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
