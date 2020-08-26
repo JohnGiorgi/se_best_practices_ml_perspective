@@ -22,14 +22,4 @@ __What tools will this guide cover?__
 - [`pytest`](https://docs.pytest.org/en/latest/), for testing.
 - [GitHub Actions](https://github.com/features/actions), for continous integration / continous development (CI/CD).
 
-## Getting started
-
-To get started, make sure you have Python 3.6 or newer installed.
-
-## Best practice #1: Managing depedencies
-
-Managing depedencies is important for any software project. In machine learning environments, it is particulary important if you care about reproducible results (and you should!).
-
-In Python, the canonical approach is to create isolated _virtual enviroments_ for each of our projects. These virtual enviroments store the specific dependencies needed for a given project, without interferring with the dependencies of _other_ projects (see [here](https://realpython.com/python-virtual-environments-a-primer/) for a great introduction on virtual environments.)
-
-In this guide, we are going to use Poetry, both for creating virtual enviorments and for managing dependencies.
+Follow along with the guide here: https://johngiorgi.github.io/se-best-practices-ml-perspective/.

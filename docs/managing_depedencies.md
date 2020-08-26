@@ -69,15 +69,15 @@ build-backend = "poetry.masonry.api"
 
 ## Adding Dependencies with Poetry
 
-Adding dependencies is easy. Simply call `poetry add <package_name>`. For example, we will need `scikit-learn` in this guide.
+Adding dependencies is easy. Simply call `poetry add <package_name>`. For example, we will need `pytorch-lightning` and `torchvision` in this guide.
 
 ```
-poetry add scikit-learn
+poetry add pytorch-lightning torchvision
 ```
 
-Poetry will _automatically_ create a virtual environment if one does not exist, and add `scikit-learn` as a dependency to `pyproject.toml`.
+Poetry will _automatically_ create a virtual environment if one does not exist, and add `pytorch-lightning` and `torchvision` as dependencies to `pyproject.toml`.
 
-``` toml hl_lines="9"
+``` toml hl_lines="9 10"
 [tool.poetry]
 name = "se-best-practices-ml-perspective"
 version = "0.1.0"
@@ -86,7 +86,8 @@ authors = ["johngiorgi <johnmgiorgi@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-scikit-learn = "^0.23.2"
+pytorch-lightning = "^0.9.0"
+torchvision = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -94,3 +95,5 @@ pytest = "^5.2"
 [build-system]
 requires = ["poetry>=0.12"]
 ```
+
+Thats it for now. In the next section, we will go over linting and formatting.

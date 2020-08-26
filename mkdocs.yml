@@ -1,4 +1,9 @@
-site_name: My Docs
+site_name: Software Engineering Best Practices, a Machine Learners Perspective
+nav:
+    - Home: index.md
+    - Getting Started: getting_started.md
+    - Dependencies: managing_depedencies.md
+    - Linting and Formatting: linting_and_formatting.md
 
 theme:
     name: material

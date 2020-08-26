@@ -1,4 +1,4 @@
-# Software Engineering Best Practices, a Machine Learners Perspective
+# About this Resource
 
 This repository is meant to serve as an opinionated, pedagogical guide on software engineering best practices for those of us in machine learning.
 
