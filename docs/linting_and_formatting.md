@@ -8,7 +8,8 @@ First, make sure we are in our project directory (named `se_best_practices_ml_pe
 poetry add --dev flake8
 ```
 
-`--dev` just means we want this to be a _development dependency_, that is, a dependency we need to develop our code, but _not_ required by an end user who simply wants to run our code. Lets check our `pyproject.toml`.
+!!! note
+    `--dev` just means we want this to be a _development dependency_, that is, a dependency we need to develop our code, but _not_ required by an end user who simply wants to run our code. Lets check our `pyproject.toml`.
 
 ``` toml hl_lines="14"
 [tool.poetry]

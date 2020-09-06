@@ -1,5 +1,6 @@
-from se_best_practices_ml_perspective.main import LitClassifier
 import torch
+
+from se_best_practices_ml_perspective.main import LitClassifier
 
 
 class TestLitClassifier:
@@ -7,6 +8,7 @@ class TestLitClassifier:
 
     def test_forward(self):
         """Assert that the output shape of `LitClassifier.forward` is as expected."""
+        # dummy input data
         inputs = torch.randn(1, 28, 28)
         outputs = self.model.forward(inputs)
 
@@ -15,22 +17,26 @@ class TestLitClassifier:
         assert actual_size == expected_size
 
     def test_training_step(self):
-        """Assert that `LitClassifier.training_step` returns a non-empty dictionary."""
+        """Assert that `LitClassifier.training_step` returns a non-empty
+        dictionary."""
+        # dummy input data
         inputs = (torch.randn(1, 28, 28), torch.randint(10, (1,)))
         results = self.model.training_step(batch=inputs, batch_idx=0)
         assert isinstance(results, dict)
         assert results
 
     def test_validation_step(self):
-        """Assert that `LitClassifier.validation_step` returns a non-empty dictionary."""
+        """Assert that `LitClassifier.validation_step` returns a non-empty
+        dictionary."""
+        # dummy input data
         inputs = (torch.randn(1, 28, 28), torch.randint(10, (1,)))
         results = self.model.validation_step(batch=inputs, batch_idx=0)
         assert isinstance(results, dict)
         assert results
 
     def test_configure_optimizers(self):
-        """Assert that `LitClassifier.configure_optimizers` returns an Adam optimizer with the
-        expected learning rate.
+        """Assert that `LitClassifier.configure_optimizers` returns an Adam optimizer
+        with the expected learning rate.
         """
         optimizer = self.model.configure_optimizers()
         assert isinstance(optimizer, torch.optim.Adam)

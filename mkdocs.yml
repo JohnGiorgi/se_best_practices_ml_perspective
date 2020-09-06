@@ -5,6 +5,7 @@ nav:
     - Managing Dependencies: managing_depedencies.md
     - Linting and Formatting: linting_and_formatting.md
     - Testing our Code: testing.md
+    - Automating Everything: github_actions.md
 
 theme:
     name: material
