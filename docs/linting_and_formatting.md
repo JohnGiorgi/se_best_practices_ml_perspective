@@ -2,14 +2,14 @@
 
 A linter is a tool that can automatically identify syntax and stylistic errors in your code. A very popular linter for python is [`flake8`](https://flake8.pycqa.org/en/latest/) and will be our tool of choice in this guide.
 
-First, make sure we are in our project directory (named `se_best_practices_ml_perspective`) by default. Then, lets add `flake8` as a development dependency.
+First, make sure we are in our project directory (named `se_best_practices_ml_perspective`) by default. Then, let's add `flake8` as a development dependency.
 
 ``` bash
 poetry add --dev flake8
 ```
 
 !!! note
-    `--dev` just means we want this to be a _development dependency_, that is, a dependency we need to develop our code, but _not_ required by an end user who simply wants to run our code. Lets check our `pyproject.toml`.
+    `--dev` just means we want this to be a _development dependency_, that is, a dependency we need to develop our code, but _not_ required by an end-user who simply wants to run our code. Let's check our `pyproject.toml`.
 
 ``` toml hl_lines="14"
 [tool.poetry]
@@ -34,7 +34,7 @@ build-backend = "poetry.masonry.api"
 
 As expected, `flake8` has been added as a development dependency.
 
-Now, lets setup a simple example with `pytorch-lightning`. We will borrow [their minimal example](https://github.com/PyTorchLightning/pytorch-lightning#heres-a-minimal-example-without-a-test-loop). Download it by running the following.
+Now, lets set up a simple example with `pytorch-lightning`. We will borrow [their minimal example](https://github.com/PyTorchLightning/pytorch-lightning#heres-a-minimal-example-without-a-test-loop). Download it by running the following.
 
 ``` bash
 curl -o se_best_practices_ml_perspective/main.py https://raw.githubusercontent.com/JohnGiorgi/se_best_practices_ml_perspective/master/se_best_practices_ml_perspective/main_with_stylistic_errors.py
@@ -46,7 +46,7 @@ Then, lets lint the file, checking it for errors.
 poetry run flake8 .
 ```
 
-`flake8` reports several sytlistic errors
+`flake8` reports several stylistic errors.
 
 ```
 ./se_best_practices_ml_perspective/main.py:1:80: E501 line too long (90 > 79 characters)
@@ -62,7 +62,7 @@ Now, we could fix each error manually, but in the next section, we will see how 
 
 A code formatter is a tool that will ensure your code follows a particular code style. Using a consistent code style across your codebase can improve readability. Combining an automatic code formatter with a linter is a great way to improve your code style effortlessly. A very popular code formatter for python is [`black`](https://github.com/psf/black) and will be our tool of choice in this guide.
 
-First, just like the `flake8`, lets add `black` as a development dependency.
+First, just like the `flake8`, let's add `black` as a development dependency.
 
 ```bash
 poetry add --dev black
@@ -73,25 +73,27 @@ poetry add --dev black
 
     ```ini
     [flake8]
+    max-line-length = 100
+
     ignore =
         # these rules don't play well with black
         E203  # whitespace before :
         W503  # line break before binary operator
     ```
 
-    Or download it directly from this repository
+    Or download it directly from this repository.
 
     ```
     curl -o ./.flake8 https://raw.githubusercontent.com/JohnGiorgi/se_best_practices_ml_perspective/master/.flake8
     ```
 
-Once installed, we can automatically format our code with the following command
+Once installed, we can automatically format our code with the following command.
 
 ```bash
 poetry run black .
 ```
 
-With our code reformatted, lets call the linter again
+With our code reformatted, let's call the linter again.
 
 ```
 poetry run flake8 .

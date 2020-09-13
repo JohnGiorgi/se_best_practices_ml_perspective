@@ -12,7 +12,7 @@ pytorch-lightning = "^0.9.0"
 torchvision = "^0.7.0"
 
 [tool.poetry.extras]
-documentation = ["mkdocs", "mkdocs-material"]
+documentation = ["mkdocs-material"]
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.0.1"

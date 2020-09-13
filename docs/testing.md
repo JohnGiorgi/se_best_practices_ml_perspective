@@ -2,7 +2,7 @@ This is the most important section in the guide. Unit tests are short tests that
 
 There are multiple unit testing frameworks in Python, but we will use a very popular one, [`pytest`](https://docs.pytest.org/en/latest/).
 
-Typically, tests are grouped under a `tests` directory (Poetry created this for us automatically). Lets start by creating a file, `test_main.py` under `tests`.
+Typically, tests are grouped under a `tests` directory (Poetry created this for us automatically). Let's start by creating a file, `test_main.py` under `tests`.
 
 ```bash
 touch tests/test_main.py
@@ -44,7 +44,7 @@ FAILED tests/test_main.py::TestLitClassifier::test_validation_step - assert Fals
 FAILED tests/test_main.py::TestLitClassifier::test_configure_optimizers - assert False
 ```
 
-Lets get each test to pass, one-by-one, starting with `test_forward`.
+Let's get each test to pass, one-by-one, starting with `test_forward`.
 
 ``` python hl_lines="9 10 11 12 13 14 15"
 from se_best_practices_ml_perspective.main import LitClassifier
@@ -73,7 +73,7 @@ class TestLitClassifier:
         assert False
 ```
 
-Here, we add a simple test that asserts for some random input, our output is of the expected shape. Running the tests again, we will notice that `test_forward` is now passing.
+Here, we add a simple test that asserts for some random input, the output is of the expected shape. Running the tests again, we will notice that `test_forward` is now passing.
 
 ```
 ================================================== short test summary info ==================================================
@@ -125,9 +125,6 @@ class TestLitClassifier:
         assert optimizer.param_groups[0]["lr"] == 0.02
 ```
 
-In this quick overview of unit testing, we wrote simple tests for each method of our neural network classifier. We then checked that all tests are passing, increasing our confidence that our code works as expected. In the future, we we were to refactor our code, we could re-run our tests to ensure we didn't break anything.
+In this quick overview of unit testing, we wrote simple tests for each method of our neural network classifier. We then checked that all tests are passing, increasing our confidence that our code works as expected. In the future, if we were to refactor our code, we could re-run our tests to ensure we didn't break anything.
 
-In the next and final section, we will see how to tie everything we have learned together, and automate the process of linting, formatting and testing.
-
-
-
+In the next and final section, we will see how to tie everything we have learned together and automate the process of linting, formatting and testing.

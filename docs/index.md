@@ -16,7 +16,7 @@ In truth, nothing important. We use Python as the language of choice as it is po
 
 __What tools will this guide cover?__
 
-- [`Poetry`](https://python-poetry.org/docs/#system-requirements), for managing virtual enviornments and package dependencies.
+- [`Poetry`](https://python-poetry.org/docs/#system-requirements), for managing virtual environments and package dependencies.
 - [`flake8`](https://flake8.pycqa.org/en/latest/), for linting.
 - [`black`](https://pypi.org/project/black/), for formatting.
 - [`pytest`](https://docs.pytest.org/en/latest/), for testing.

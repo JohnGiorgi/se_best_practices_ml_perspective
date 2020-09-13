@@ -1,4 +1,5 @@
 site_name: Software Engineering Best Practices, a Machine Learners Perspective
+repo_url: https://github.com/JohnGiorgi/se_best_practices_ml_perspective
 nav:
     - Home: index.md
     - Getting Started: getting_started.md

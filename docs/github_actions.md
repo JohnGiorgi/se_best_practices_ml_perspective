@@ -1,14 +1,14 @@
-To conclude, we are going to see how all these steps can be automated with [GitHub Actions](https://github.com/features/actions).
+To conclude, we will see how all these steps can be automated with [GitHub Actions](https://github.com/features/actions).
 
-A GitHub action is a series of tasks that can be automated to run on a certain action, e.g. on each pull request or merge to your GitHub repo. Actions are specificed with [YAML](https://yaml.org/) config files. Lets build ours up piece by piece. 
+A GitHub action (or "workflow") is a series of tasks that can be automated to run at a certain time, e.g. on each pull request or merge to your GitHub repo. Actions are specified with [YAML](https://yaml.org/) config files. Let's build ours up piece by piece. 
 
-First, create the directory to hold our config
+First, create the YAML config file.
 
 ```bash
-mkdir -p .github/workflows && touch build.yml
+mkdir -p .github/workflows && touch .github/workflows/build.yml
 ```
 
-Then we will start by adding a name, and defining when our action will run
+We will start by adding a name and defining when our action will run.
 
 ```yaml
 name: build
@@ -20,7 +20,7 @@ on:
     branches: [ master ]
 ```
 
-This says that our job, named `build` will run on every push and pull request to the master branch of our repository. Next, we define the "build matrix":
+This says that our job, named `build`, will run on every push and pull request to the master branch of our repository. Next, we define the "build matrix".
 
 ```yaml hl_lines="9 10 11 12 13 14 15 16 17"
 name: build
@@ -41,11 +41,11 @@ jobs:
         python-version: [3.6, 3.7, 3.8]
 ```
 
-This means that all steps in our action will run independently for each of the latests availble version of the Windows, Ubuntu and MacOS operating systems on Python versions 3.6, 3.7, and 3.8. Finally, we add the actually steps our our workflow.
+This means that our action steps will run independently for each of the latest available versions of the Windows, Ubuntu and macOS operating systems on Python versions 3.6, 3.7, and 3.8. Finally, we add the steps to our workflow.
 
-#### Check our our Repository and Set up python
+#### Check out our Repository and Set up python
 
-These built in actions will checkout out our repository, and set up the appropriate Python version.
+These built-in actions will checkout out our repository and set up the appropriate Python version.
 
 ```yaml hl_lines="18 19 20 21 22 23"
 name: build
@@ -199,6 +199,10 @@ jobs:
           poetry run pytest tests
 ```
 
-Now, everytime we open a pull request or push our code to master, everything we have discussed in this guide will run automatically. If any of the steps fail, we will recieve an error. Otherwise, our build will pass.
+Now, every time we open a pull request or push our code to master, everything we have discussed in this guide will run automatically. If any of the individual steps fail, the build will *fail*. Otherwise, the build will *pass*.
 
-For example, the build status of the repository where this guid lives is: 
+![](images/github_actions.png)
+
+For example, the build status of the repository where this guide lives is: ![build](https://github.com/JohnGiorgi/se_best_practices_ml_perspective/workflows/build/badge.svg)
+
+Thats the end of the guide! We covered some of the most important best practices in software engineering, and specific tools to automate each of them. Then, we learned how we can automate an entire build using GitHub Actions. Checkout the [GitHub repository where this guide lives](https://github.com/JohnGiorgi/se_best_practices_ml_perspective.git) for all the code we covered in the guide.
