@@ -11,7 +11,7 @@
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
     
     
       
@@ -19,7 +19,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.01afc2df.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4dd2dd8d.min.css">
       
       
     
@@ -110,6 +110,19 @@
 </div>
     
     
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/JohnGiorgi/se_best_practices_ml_perspective/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
   </nav>
 </header>
     
@@ -137,6 +150,19 @@
     </a>
     Software Engineering Best Practices, a Machine Learners Perspective
   </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/JohnGiorgi/se_best_practices_ml_perspective/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -207,6 +233,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../github_actions/" title="Automating Everything" class="md-nav__link">
+      Automating Everything
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -219,6 +257,10 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/JohnGiorgi/se_best_practices_ml_perspective/edit/master/docs/testing.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
                 
                   
                 
@@ -227,7 +269,7 @@
                 
                 <p>This is the most important section in the guide. Unit tests are short tests that assert the output of some function or method equals the expected value for some given input. They allow us to ensure our code does what we think it does, reducing bugs and making it dramatically easier to refactor our code down the line.</p>
 <p>There are multiple unit testing frameworks in Python, but we will use a very popular one, <a href="https://docs.pytest.org/en/latest/"><code>pytest</code></a>.</p>
-<p>Typically, tests are grouped under a <code>tests</code> directory (Poetry created this for us automatically). Lets start by creating a file, <code>test_main.py</code> under <code>tests</code>.</p>
+<p>Typically, tests are grouped under a <code>tests</code> directory (Poetry created this for us automatically). Let's start by creating a file, <code>test_main.py</code> under <code>tests</code>.</p>
 <div class="highlight"><pre><span></span><code>touch tests/test_main.py
 </code></pre></div>
 
@@ -261,7 +303,7 @@ FAILED tests/test_main.py::TestLitClassifier::test_validation_step - assert Fals
 FAILED tests/test_main.py::TestLitClassifier::test_configure_optimizers - assert False
 </code></pre></div>
 
-<p>Lets get each test to pass, one-by-one, starting with <code>test_forward</code>.</p>
+<p>Let's get each test to pass, one-by-one, starting with <code>test_forward</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">se_best_practices_ml_perspective.main</span> <span class="kn">import</span> <span class="n">LitClassifier</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 
@@ -288,7 +330,7 @@ FAILED tests/test_main.py::TestLitClassifier::test_configure_optimizers - assert
         <span class="k">assert</span> <span class="kc">False</span>
 </code></pre></div>
 
-<p>Here, we add a simple test that asserts for some random input, our output is of the expected shape. Running the tests again, we will notice that <code>test_forward</code> is now passing.</p>
+<p>Here, we add a simple test that asserts for some random input, the output is of the expected shape. Running the tests again, we will notice that <code>test_forward</code> is now passing.</p>
 <div class="highlight"><pre><span></span><code>================================================== short test summary info ==================================================
 FAILED tests/test_main.py::TestLitClassifier::test_training_step - assert False
 FAILED tests/test_main.py::TestLitClassifier::test_validation_step - assert False
@@ -335,8 +377,8 @@ FAILED tests/test_main.py::TestLitClassifier::test_configure_optimizers - assert
 </span><span class="hll">        <span class="k">assert</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">param_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;lr&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.02</span>
 </span></code></pre></div>
 
-<p>In this quick overview of unit testing, we wrote simple tests for each method of our neural network classifier. We then checked that all tests are passing, increasing our confidence that our code works as expected. In the future, we we were to refactor our code, we could re-run our tests to ensure we didn't break anything.</p>
-<p>In the next and final section, we will see how to tie everything we have learned together, and automate the process of linting, formatting and testing.</p>
+<p>In this quick overview of unit testing, we wrote simple tests for each method of our neural network classifier. We then checked that all tests are passing, increasing our confidence that our code works as expected. In the future, if we were to refactor our code, we could re-run our tests to ensure we didn't break anything.</p>
+<p>In the next and final section, we will see how to tie everything we have learned together and automate the process of linting, formatting and testing.</p>
                 
               
               
@@ -370,6 +412,20 @@ FAILED tests/test_main.py::TestLitClassifier::test_configure_optimizers - assert
           </a>
         
         
+          <a href="../github_actions/" title="Automating Everything" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Automating Everything
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
       </nav>
     </div>
   
@@ -389,15 +445,15 @@ FAILED tests/test_main.py::TestLitClassifier::test_configure_optimizers - assert
       
     </div>
     
-      <script src="../assets/javascripts/vendor.df0def68.min.js"></script>
-      <script src="../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
+      <script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: [],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
