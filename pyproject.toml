@@ -4,7 +4,6 @@ version = "0.1.2"
 description = "An opinionated, pedagogical guide on software engineering best practices for those of us in machine learning."
 license = "Apache-2.0"
 authors = ["johngiorgi <johnmgiorgi@gmail.com>"]
-readme = "README.md"
 homepage = "https://johngiorgi.github.io/se_best_practices_ml_perspective/"
 repository = "https://github.com/JohnGiorgi/se_best_practices_ml_perspective"
 
