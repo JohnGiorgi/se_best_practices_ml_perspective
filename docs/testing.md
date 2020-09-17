@@ -15,6 +15,8 @@ from se_best_practices_ml_perspective.main import LitClassifier
 
 
 class TestLitClassifier:
+    model = LitClassifier()
+
     def test_forward(self):
         assert False
 
