@@ -1,9 +1,11 @@
 [tool.poetry]
 name = "se_best_practices_ml_perspective"
-version = "0.1.0"
+version = "0.1.2"
 description = "An opinionated, pedagogical guide on software engineering best practices for those of us in machine learning."
-authors = ["johngiorgi <johnmgiorgi@gmail.com>"]
 license = "Apache-2.0"
+authors = ["johngiorgi <johnmgiorgi@gmail.com>"]
+homepage = "https://johngiorgi.github.io/se_best_practices_ml_perspective/"
+repository = "https://github.com/JohnGiorgi/se_best_practices_ml_perspective"
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
